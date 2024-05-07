@@ -1,0 +1,41 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/adminsendreply_post">
+<h1 align="center"><b>SEND REPLY</b></h1>
+  <table width="354" height="166" border="1" class="table table-striped">
+
+      <tr>
+      <td><B>Complaints</B></td>
+      <td><label>{{ val.complaint }}
+
+      </label></td>
+    </tr>
+       <tr>
+      <td><B>Name</B></td>
+      <td><label>{{ val.LOGIN.username }}({{val.LOGIN.type}})
+
+      </label></td>
+    </tr>
+       <tr>
+      <td><B>Date</B></td>
+      <td><label>{{ val.date }}
+
+      </label></td>
+    </tr>
+
+    <tr>
+      <td><B>Reply</B></td>
+      <td><label>
+        <input type="text" name="textfield" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <div align="center">
+          <input type="submit" name="Submit" value="Send" CLASS="BTN btn-primary"/>
+          </div>
+      <div align="center"></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

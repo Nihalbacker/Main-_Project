@@ -1,0 +1,38 @@
+{% extends 'supervsrindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/sendreply_post#about">
+<h1 align="center"><b>SEND REPLY</b></h1>
+  <table width="354" height="166" border="1" class="table table-striped">
+      <tr>
+      <td><b>Date</b></td>
+      <td><label>
+       {{ val.date }}
+      </label></td>
+    </tr>
+      <tr>
+      <td><b>Worker Name</b></td>
+      <td><label>{{ val.WORKEER.fname }} {{ val.WORKEER.lname }}
+      </label></td>
+    </tr>
+      <tr>
+      <td><b>Complaint</b></td>
+      <td><label>
+        {{ val.complaint }}
+      </label></td>
+    </tr>
+    <tr>
+      <td><b>Reply</b></td>
+      <td><label>
+        <input type="text" name="textfield" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <div align="center">
+          <input type="submit" name="Submit" value="Send" class="btn btn-primary" />
+          </div>
+      <div align="center"></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'supervsrindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/mngresources_search#about">
+<h1 align="center"><b><font color="black">MANAGE RESOURCES</font></b></h1>
+  <table width="749" height="231" border="1" class="table table-striped ">
+    <tr>
+      <td colspan="10"><b>Type</b>
+        <label>
+        <input type="text" name="textfield" value="{{ search }}"/>
+        </label>
+        <label>
+        <input type="submit" name="Submit2" value="Search" class="btn btn-primary" />
+        </label>
+      </td>
+    </tr>
+  <tr align="center">
+<td colspan="8">
+        <div align="center">
+          <a href="/addresourc#about" class="btn btn-primary">Add</a>
+          </div>
+      </td>
+    </tr>
+    <tr>
+        <td><b>Product Type</b> </td>
+      <td><b>Product Name</b> </td>
+      <td><b>Manufacturer</b></td>
+      <td><b>Model Number</b> </td>
+      <td><b>Details</b></td>
+      <td><b>Photo</b></td>
+        <td></td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.product_type }}</td>
+      <td>&nbsp;{{ i.product_name }}</td>
+      <td>&nbsp;{{ i.manufacturer }}</td>
+      <td>&nbsp;{{ i.model_number }}</td>
+      <td>&nbsp;{{ i.details }}</td>
+      <td>&nbsp;<img src="{{ i.photo.url }}" height="150" width="150"></td>
+      <td><p><a href="editres/{{ i.id }}#about" class="btn btn-success">EDIT</a></p>
+        <p><a href="deleteres/{{ i.id }}" class="btn btn-danger">DELETE</a></p>
+      <p>&nbsp;</p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

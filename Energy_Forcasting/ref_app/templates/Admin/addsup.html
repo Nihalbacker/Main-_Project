@@ -1,0 +1,89 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="addsuppost" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <h1 align="center" class="heading-section"><b><font color="black">ADD SUPERVISOR</font></b></h1>
+  <table width="235" border="1" class="table table-striped">
+    <tr>
+      <td><b>First Name</b></td>
+      <td><input type="text" name="textfield" required pattern="[A-Z a-z.]{3,25}" alert="Fill this field"/></td>
+    </tr>
+    <tr>
+      <td><b>Last Name</b></td>
+      <td><input type="text" name="textfield2" required pattern="[A-Z a-z.]{1,25}"/></td>
+    </tr>
+    <tr>
+      <td><b>Gender</b></td>
+      <td><input type="radio" name="radio"  value="Male" input type="radio" name="r1" value="male" checked/><b>Male</b>
+      <input type="radio" name="radio"  value="female" input type="radio" name="r1" value="female"/><b>Female</b></td>
+    </tr>
+    <tr>
+      <td><b>Place</b></td>
+      <td><input type="text" name="textfield4" pattern="[A-Z a-z.]{3,25}" required /></td>
+    </tr>
+    <tr>
+      <td><b>Post</b></td>
+      <td><input type="text" name="textfield5" pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <td><b>Pin</b></td>
+      <td><input type="text" name="textfield6" required pattern="[0-9]{6}"/></td>
+    </tr>
+    <tr>
+      <td><b>Phone</b></td>
+      <td><input type="text" name="textfield7" required pattern="[6789][0-9]{9}"/></td>
+    </tr>
+    <tr>
+      <td><b>Date Of Birth</b></td>
+      <td><input type="date" name="textfield8" min="1964-01-01" max="2004-12-31" required /></td>
+    </tr>
+      <tr>
+      <td><b>Joined Date</b></td>
+      <td><input type="date" name="textfield11" required /></td>
+    </tr>
+    <tr>
+      <td><b>Email</b></td>
+      <td><input type="text" name="textfield9" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/></td>
+    </tr>
+      <tr>
+      <td><b>Qualification</b></td>
+      <td><input type="text" name="textfield12" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/></td>
+    </tr>
+    <tr>
+      <td><b>Photo</b></td>
+      <td><label>
+        <input type="file" name="file" required/>
+      </label></td>
+    </tr>
+      <tr>
+      <td><b>Proof</b></td>
+      <td><label>
+        <input type="file" name="file1" required/>
+      </label></td>
+    </tr>
+      <tr>
+      <td><b>Username</b></td>
+      <td><input type="text" name="textfield1" required pattern="[A-Z a-z 0-9]{3,25}" /></td>
+    </tr>
+      <tr>
+      <td><b>Password</b></td>
+      <td><label>
+        <input type="text" name="textfield10" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="required"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <div align="center">
+          <input type="submit" name="Submit" value="ADD" class="btn btn-primary"/>
+          </div>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

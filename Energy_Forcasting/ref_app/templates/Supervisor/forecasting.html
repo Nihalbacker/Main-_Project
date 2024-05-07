@@ -1,0 +1,40 @@
+{% extends 'supervsrindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <h1 align="center"><b><font color="black">FORECASTING</font></b></h1>
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/forecasting_post#about">
+  <table width="291" height="310" border="1" class="table table-striped">
+    <tr>
+        <td width="131"><b>Select Dataset Type</b></td>
+      <td width="144"><label>
+        <select name="select">
+            <option value="solar">Solar Data</option>
+            <option value="wind">Wind Data</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td><b>Days</b></td>
+      <td><label>
+        <input type="text" name="textfield" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <div align="center">
+          <input type="submit" name="Submit" value="Forecast" class="btn btn-primary"/>
+        </div>
+      </td>
+    </tr>
+      <tr>
+          <td><img src="{{ img }}"></td>
+      </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'supervsrindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/updatedstatus">
+<h1 align="center"><b><font color="black">UPDATE STATUS</b></h1>
+  <table align="center">
+      <tr>
+      <td><b>Date</b></td>
+      <td><label>
+       {{ val.date }}
+      </label></td>
+    </tr>
+      <tr>
+      <td><b>Resources</b></td>
+      <td><label>
+       <img src="{{ val.RESOURCE.photo.url }}" height="150px" width="150px"> <br>{{ val.RESOURCE.product_type }}-{{ val.RESOURCE.product_name }}
+      </label></td>
+    </tr>
+      <tr>
+      <td><b>Works</b></td>
+      <td><label>
+       {{ val.work }}
+      </label></td>
+    </tr>
+      <tr>
+      <td><b>Details</b></td>
+      <td><label>
+       {{ val.details }}
+      </label></td>
+    </tr>
+      <tr>
+      <td><b>Status</b></td>
+      <td><label>
+        <select name="select">
+            <option value="Completed" >Completed</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Deferred">Deferred</option>
+            <option value="Cancelled">Cancelled</option>
+            <option value="Stopped">Stopped</option>
+        </select>
+      </label></td>
+    </tr>
+<tr>
+      <td colspan="2"><label>
+        <input type="submit" name="Submit" value="Submit" class="btn btn-primary" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

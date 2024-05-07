@@ -1,0 +1,47 @@
+{% extends 'supervsrindex.html' %}
+{% block body %}
+<form id="form1" name="form1" enctype="multipart/form-data" method="post" action="/addres">
+<h1 align="center"><b><font color="black">ADD RESOURCES</font> </b></h1>
+  <table width="307" height="345" border="1" class="table table-striped">
+     <tr>
+         <td><b>Resource Type</b> </td>
+      <td><label>
+        <select name="select">
+            <option value="Wind Mill">Wind Mill</option>
+            <option value="Solar Panel">Solar panel</option>
+{#            <option value="Pipe">Pipe</option>#}
+{#            <option value="Wire">Wire</option>#}
+        </select>
+      </label></td>
+    </tr>
+   <tr>
+      <td><b>Product Name</b></td>
+      <td><input type="text" name="textfield2" required pattern="[A-Z a-z 0-9]{3,25}"/></td>
+    </tr>
+      <tr>
+      <td><b>Details</b></td>
+      <td><input type="text" name="textfield5" /></td>
+    </tr>
+    <tr>
+      <td><b>Manufacturer</b></td>
+      <td><input type="text" name="textfield3" required="required" pattern="[A-Z a-z.]+"/></td>
+    </tr>
+    <tr>
+        <td><b>Model Number</b> </td>
+      <td><input type="text" name="textfield4" required="required" pattern="[A-Z a-z 0-9]{3,25}" title="Enter a valid Number (e.g., XX3456788)" /></td>
+    </tr>
+    <tr>
+       <tr>
+      <td><b>Photo</b></td>
+      <td><input type="file" name="file" accept="image/jpeg,image.png" required/></td>
+    </tr>
+    <tr>
+      <td colspan="12">
+        <div align="center">
+          <input type="submit" name="Submit" value="ADD" class="btn btn-primary" />
+          </div>
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

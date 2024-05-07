@@ -1,0 +1,43 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="assignsup#about">
+<h1 align="center"><b>ASSIGNED WORKS</b></h1>
+<tr>
+      <td colspan="7">
+        <div align="center">
+          <input type="submit" name="Submit" value="Add New" class="btn btn-primary"/>
+          </div>
+      </td>
+    </tr>
+  <table width="235" border="1" class="table table-striped">
+    <tr>
+      <td><b>Supervisor</b> </td>
+      <td><b>Work</b></td>
+      <td><b>Details</b></td>
+      <td><b>Status</b></td>
+      <td><b>Date</b></td>
+      <td><b>Resources</b></td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in value %}
+    <tr>
+      <td>{{ i.SUPERVISOR.fname }} {{ i.SUPERVISOR.lname }}</td>
+      <td><label>{{ i.work }}</label></td>
+      <td>{{ i.details }}</td>
+      <td>{{ i.status }}</td>
+      <td><label>{{ i.date }}</label></td>
+      <td><img src="{{ i.RESOURCE.photo.url }}" height="150px" width="150px"><br>{{ i.RESOURCE.product_type }} - {{ i.RESOURCE.product_name }}</td>
+      <td><p><a href="editassignworkstosup/{{ i.id }}" class="btn btn-success">Edit</a></p>
+      <p><a href="deleteassignworkstosup/{{ i.id }}" class="btn btn-danger">Delete</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

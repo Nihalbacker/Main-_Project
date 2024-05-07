@@ -1,0 +1,46 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="viewresourcessearch#about">
+<h1 align="center"><b>VIEW RESOURCES</b></h1>
+  <table width="235" border="1" class="table table-striped">
+    <tr>
+      <td colspan="8"><label>
+        Type
+            <input type="text" name="textfield" value="{{ n }}"/>
+            <input type="submit" name="Submit" value="Search" class="btn btn-primary" />
+      </label></td>
+    </tr>
+    <tr>
+      <td><b>Date</b></td>
+      <td><b>Product Type </b></td>
+      <td><b>Product Name</b> </td>
+      <td><b>Manufacturer</b></td>
+      <td><b>Model Number</b> </td>
+      <td><b>Details</b></td>
+        <td><b>Photo</b></td>
+
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>{{ i.product_type }}</td>
+      <td>&nbsp;{{ i.product_name }}</td>
+      <td>&nbsp;{{ i.manufacturer }}</td>
+      <td>&nbsp;{{ i.details }}</td>
+      <td>&nbsp;{{ i.model_number }}</td>
+      <td><img src="../media/{{ i.photo }}" height="150px" width="150px"></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="6">&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

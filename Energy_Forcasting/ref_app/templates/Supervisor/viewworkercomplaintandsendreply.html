@@ -1,0 +1,42 @@
+{% extends 'supervsrindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <h1 align="center"><b><font color="black">VIEW WORKER COMPLAINT</font> </b></h1>
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/viewworkercomplaintandsendreply_search#about">
+  <table width="578" height="232" border="1" class="table table-striped">
+    <tr>
+      <td colspan="5"><b>Name</b>
+        <label>
+        <input type="text" name="textfield" />
+        <input type="submit" name="Submit" value="Search" class="btn btn-primary" />
+      </label></td>
+    </tr>
+    <tr>
+        <td><b>Sl No </b></td>
+      <td><b>Date</b></td>
+      <td><b>Worker Name</b> </td>
+      <td><b>Complaint</b></td>
+      <td><b>Reply</b></td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td> {{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>&nbsp;{{ i.WORKEER.fname }} {{ i.WORKEER.lname }}</td>
+      <td>&nbsp;{{ i.complaint }}</td>
+        {% if i.reply == "pending" %}
+      <td><a href="/sendreply/{{ i.id }}#about" class="btn btn-primary">Reply</a></td>
+    {% else %}
+            <td>{{ i.reply }}</td>
+    {% endif %}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

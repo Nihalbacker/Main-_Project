@@ -1,0 +1,82 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<div class="container">
+    <div class="card p-3 shadow">
+<form action="/editsuppost" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <h1 align="center"><b>EDIT SUPERVISOR</b></h1>
+  <table width="235" border="1" class="table table-striped">
+    <tr>
+      <td><b>Fname</b></td>
+      <td><label>
+        <input type="text" name="textfield" value="{{ val.fname }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td><b>Lname</b></td>
+      <td><input type="text" name="textfield2" value="{{ val.lname }}" /></td>
+    </tr>
+    <tr>
+      <td><b>Gender</b></td>
+      <td><input type="text" name="radio" value="{{ val.gender }}"/></td>
+    </tr>
+    <tr>
+      <td><b>Place</b></td>
+      <td><input type="text" name="textfield4" value="{{ val.place }}"/></td>
+    </tr>
+    <tr>
+      <td><b>Post</b></td>
+      <td><input type="text" name="textfield5" value="{{ val.post }}"/></td>
+    </tr>
+    <tr>
+      <td><b>Pin</b></td>
+      <td><input type="text" name="textfield6" value="{{ val.pin }}"/></td>
+    </tr>
+    <tr>
+      <td><b>Phone</b></td>
+      <td><input type="text" name="textfield7" value="{{ val.phone }}"/></td>
+    </tr>
+    <tr>
+      <td><b>Date of Birth</b></td>
+      <td><input type="date" name="textfield8" value="{{ date }}"/></td>
+    </tr>
+      <tr>
+      <td><b>Qualification</b></td>
+      <td><input type="text" name="textfield12" value="{{ val.qualification }}"/></td>
+    </tr>
+      <tr>
+      <td><b>Join Date</b></td>
+      <td><input type="date" name="textfield11" value="{{ date2 }}"/></td>
+    </tr>
+    <tr>
+      <td><b>Email</b></td>
+      <td><input type="text" name="textfield9" value="{{ val.email }}"/></td>
+    </tr>
+      <tr>
+      <td><b>Proof</b></td>
+      <td><label>
+        <input type="file" name="file1" value="{{ val.proof }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td><b>Photo</b></td>
+      <td><label>
+        <input type="file" name="file" value="{{ val.photo }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="12">
+          <div align="center">
+            <input type="submit" name="Submit" value="Edit"  class="btn btn-primary"/>
+          </div>
+        </td>
+    </tr>
+  </table>
+</form>
+    </div>
+</div>
+{% endblock %}

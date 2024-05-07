@@ -1,0 +1,71 @@
+{% extends 'supervsrindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <h1 align="center"><b>Wind Properties</b></h1>
+  <table width="275" height="434" border="1" class="table table-striped">
+    <tr>
+      <td><b>Parameters Used </b></td>
+      <td><b>Description</b></td>
+    </tr>
+    <tr>
+      <td><strong data-sider-select-id="434520aa-843a-4f72-ab40-8be87c11d465">Time (year-month-day h:m:s)</strong></td>
+      <td>Timestamp indicating the specific date and time when the measurements were taken.</td>
+    </tr>
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="de11d999-c3a7-46de-ac3f-8ed264b8ca4b">Wind Speed at Height of 10 Meters (m/s)</strong></td>#}
+{#      <td>The speed of the wind measured at a height of 10 meters above ground level, in meters per second.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="84219bc5-be5a-412b-9897-23f77e2f540b">Wind Direction at Height of 10 Meters (&#730;)</strong> </td>#}
+{#      <td>The direction from which the wind is blowing at 10 meters above ground, measured in degrees.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="fdf76414-c317-467e-8f0f-ed40248b54ef">Wind Speed at Height of 30 Meters (m/s)</strong></td>#}
+{#      <td>Wind speed recorded at 30 meters above the ground.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="64160502-cd5b-4f7d-a984-510ce1171529">Wind Direction at Height of 30 Meters (&#730;)</strong></td>#}
+{#      <td>The wind direction at 30 meters height.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="0f15f0c4-aaa4-4ec7-b77c-305dcf591fc7">Wind Speed at Height of 50 Meters (m/s)</strong></td>#}
+{#      <td>The speed of the wind measured at 50 meters above ground level.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="54b1bf85-a415-4e27-bd90-4e398d71a21a">Wind Direction at Height of 50 Meters (&#730;)</strong></td>#}
+{#      <td>Wind direction measured at 50 meters above the ground.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="9b920bd2-ac7f-48f7-9df4-a9e26ac78b9f">Wind Speed at the Height of Wheel Hub (m/s)</strong></td>#}
+{#      <td>Wind speed measured at the height of the turbine&rsquo;s wheel hub, critical for assessing the actual wind energy available to the turbine.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="82e4b4b3-3e47-41d7-95ca-5515c91f94d6">Wind Direction at the Height of Wheel Hub (&#730;)</strong></td>#}
+{#      <td>Direction of the wind at the turbine wheel hub&rsquo;s height.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="6ee9ac45-7463-4f87-830c-cfac6d1f1c50">Air Temperature (&deg;C)</strong></td>#}
+{#      <td>The temperature of the air at the time of measurement in degrees Celsius.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="d2bb330f-4800-4cf1-98f1-bba28ed41cb1">Atmosphere (hPa)</strong></td>#}
+{#      <td>Atmospheric pressure at the time of measurement, in hectopascals.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="cd6a096b-9236-4245-9192-dd47fe7c67a5">Relative Humidity (%)</strong> </td>#}
+{#      <td>The percentage of moisture in the air compared to what the air can hold at that temperature.</td>#}
+{#    </tr>#}
+    <tr>
+      <td><strong data-sider-select-id="bc0c43d7-cd71-4dbb-8c8a-3d75696f81b2">Power (MW)</strong></td>
+      <td>The power output being generated from the wind energy source, measured in megawatts.</td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/searchsup#about">
+    <h1 align="center"><b>MANAGE SUPERVISOR</b></h1>
+  <table width="235" border="1" class="table table-responsive">
+      <tr>
+      <td colspan="11"><label><b>Name</b>
+          <input type="text" name="textfield" />
+          <input type="submit" name="Submit" value="Search" class="btn btn-primary"  />
+      </label></td>
+    </tr>
+  <tr align="center">
+      <td colspan="20">
+          <a href="addsup#about" class="btn btn-primary">Add</a></td>
+  </tr>
+    <tr>
+      <td><b>Name</b></td>
+      <td><b>Gender</b></td>
+      <td><b>Address</b></td>
+      <td><b>Phone</b></td>
+      <td><b>Dob</b></td>
+      <td><b>Qualification</b></td>
+      <td><b>Joined Date</b></td>
+      <td><b>Email</b></td>
+      <td><b>Proof</b></td>
+      <td><b>Photo</b></td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td >&nbsp;{{ i.fname }} {{ i.lname }}</td>
+      <td>&nbsp;{{ i.gender }}</td>
+      <td>&nbsp;{{ i.place }} {{ i.pin }} {{ i.post }}</td>
+
+      <td >&nbsp;{{ i.phone }}</td>
+      <td>&nbsp;{{ i.dob }}</td>
+      <td>{{ i.qualification }}</td>
+      <td>{{ i.joindate }}</td>
+      <td>&nbsp;{{ i.email }}</td>
+      <td>&nbsp;<img src="media/{{ i.proof }}" height="100px" width="100px"></td>
+      <td><img src="media/{{ i.photo }}" height="120px" width="110px"></td>
+      <td><a href="editsupervsr/{{ i.id }}#about" class="btn btn-success">EDIT</a><p></p>
+{#      <a href="deletesup/{{ i.LOGIN.id }}" class="btn btn-danger">DELETE</a></td>#}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

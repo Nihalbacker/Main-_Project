@@ -1,0 +1,41 @@
+{% extends 'supervsrindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="/edittaddres">
+<h1 align="center"><b><font color="black">EDIT RESOURCES</font></b></h1>
+  <table width="307" height="345" border="1"class="table table-striped">
+    <tr>
+      <td><b>Product Type</b> </td>
+      <td><label>
+        <input type="text" name="textfield" value="{{ val.product_type }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td><b>Product Name</b> </td>
+      <td><input type="text" name="textfield2"  value="{{ val.product_name }}"/></td>
+    </tr>
+    <tr>
+      <td><b>Manufacturer</b></td>
+      <td><input type="text" name="textfield3" value="{{ val.manufacturer }}"/></td>
+    </tr>
+    <tr>
+      <td><b>Model Number</b> </td>
+      <td><input type="text" name="textfield4"  value="{{ val.model_number }}"/></td>
+    </tr>
+    <tr>
+      <td><b>Details</b></td>
+      <td><input type="text" name="textfield5" value="{{ val.details }}"/></td>
+    </tr>
+       <tr>
+      <td><b>Photo</b></td>
+      <td><input type="file" name="file" value="{{ val.photo.url }}" ><img src="{{ val.photo.url }}"width="100" height="100" ></td>
+    </tr>
+    <tr>
+      <td colspan="12">
+          <div align="center">
+            <input type="submit" name="Submit" value="EDIT" class="btn btn-primary"/>
+          </div>
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

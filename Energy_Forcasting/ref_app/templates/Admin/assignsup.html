@@ -1,0 +1,62 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/assigningworktosup#about">
+<h1 align="center"><b>ADD NEW WORKS</b></h1>
+
+  <table width="235" border="1" class="table table-striped">
+    <tr>
+      <td><b>Supervisor</b></td>
+      <td><label>
+        <select name="select">
+            {% for i in v %}
+            <option value="{{ i.id }}">{{ i.fname }} {{ i.lname }}</option>
+            {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td><b>Works</b></td>
+      <td><label>
+        <input type="text" name="textfield">
+      </label></td>
+    </tr>
+    <tr>
+      <td><b>Details</b></td>
+      <td><label>
+      <input type="text" name="textfield2">
+      </label></td>
+    </tr>
+    <tr>
+      <td><b>Resources</b></td>
+      <td><label>
+        <select name="select2">
+             {% for i in v1 %}
+            <option value="{{ i.id }}">{{ i.product_type }}- {{ i.product_name }}</option>
+            {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+  <tr>
+      <td colspan="2">
+        <div align="center">
+           <input type="submit" name="Submit" value="Assign" class="btn btn-primary" />
+          </div>
+      </td>
+    </tr>
+{#    <tr>#}
+{#      <td colspan="2">#}
+{#        <div align="center">#}
+{#          <input type="submit" name="Submit" value="Assign" class="btn btn-primary"/>#}
+{#          </div>#}
+{#      </td>#}
+{#    </tr>#}
+  </table>
+</form>
+</body>
+{% endblock %}

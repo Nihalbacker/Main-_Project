@@ -1,0 +1,37 @@
+<{% extends 'supervsrindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+<h1 align="center"><b><font color="black">SEND COMPLAINT & VIEW REPLY</font> </b></h1>
+  <table width="409" height="209" border="1" class="table table-striped">
+  <tr>
+      <td colspan="4">
+        <div align="center">
+         <a href="/sendcomplaint#about" class="btn btn-primary">Add New</a>
+          </div>
+      </td>
+    </tr>
+
+    <tr>
+        <td><b>No</b></td>
+      <td><b>Complaint</b></td>
+      <td><b>Reply</b></td>
+      <td><b>Date</b></td>
+    </tr>
+      {% for i in val %}
+    <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.complaint }}</td>
+      <td>&nbsp;{{ i.reply }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+    </tr>
+      {% endfor %}
+{#    <tr>#}
+{#      <td colspan="3">#}
+{#        <div align="center">#}
+{#         <a href="/sendcomplaint#about" class="btn btn-primary">Add New</a>#}
+{#          </div>#}
+{#      </td>#}
+{#    </tr>#}
+  </table>
+</form>
+{% endblock %}

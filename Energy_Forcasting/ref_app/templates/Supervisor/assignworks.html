@@ -1,0 +1,36 @@
+{% extends 'supervsrindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/assignworkstoworker_post">
+<h1 align="center"><b><font color="black">ASSIGN WORKS</b></h1>
+  <table width="292" height="290" border="1" class="table table-striped">
+    <tr>
+      <td><b>Worker</b></td>
+        <td><select name="select">
+            {% for i in worker %}
+            <option value="{{ i.id }}">{{ i.fname }} {{ i.lname }}</option>
+            {% endfor %}
+        </select></td>
+    </tr>
+    <tr>
+      <td><b>Work</b></td>
+      <td><label>
+        <input type="text" name="textfield">
+      </label></td>
+    </tr>
+    <tr>
+      <td><b>Details</b></td>
+      <td><label>
+        <input type="text" name="textfield2">
+      </label></td>
+    </tr>
+
+    <tr>
+      <td colspan="2">
+        <div align="center" >
+          <input type="submit" name="Submit" value="Assign" class="btn btn-primary"/>
+          </div>
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

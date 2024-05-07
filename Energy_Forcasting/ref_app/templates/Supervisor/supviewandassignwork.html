@@ -1,0 +1,48 @@
+{% extends 'supervsrindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="supviewandassignworksearch#about">
+<h1 align="center"><b><font color="black">VIEW WORKS AND ASSIGN</b></h1>
+  <table width="552" height="232" border="1" class="table table-striped">
+    <tr>
+      <td colspan="8"><b>Resource Type</b>
+        <label>
+        <input type="text" name="textfield" />
+        <input type="submit" name="Submit" value="Search" CLASS="BTN btn-primary"/>
+      </label></td>
+    </tr>
+    <tr>
+        <td><b>Date</b></td>
+        <td><b>Resources</b></td>
+      <td><b>Works</b></td>
+      <td><b>Details</b></td>
+{#        <td><b>Worker Name</b></td>#}
+        <td><b>Status</b></td>
+      <td>&nbsp;</td>
+
+    </tr>
+      {% for i in value %}
+    <tr>
+      <td>&nbsp;{{ i.date }}</td>
+      <td><img src="{{ i.RESOURCE.photo.url }}" height="150px" width="150px"> <br>{{ i.RESOURCE.product_type }}-{{ i.RESOURCE.product_name }}</td>
+      <td>&nbsp;{{ i.work }}</td>
+      <td>&nbsp;{{ i.details }}</td>
+{#      <td>&nbsp;</td>#}
+      <td><label>{{ i.status }}{% if i.status != "pending" %} on {{ i.updated_date }} {% endif %}</label></td>
+     <td>
+    <a href="/viewassignedworkstoworker/{{ i.id }}#about" class="btn btn-success">View</a><br></br>
+      {% if i.status != "Completed" %}
+         <a href="/assignworkstoworker/{{ i.id }}#about" class="btn btn-success">Assign</a><br></br>
+     <a href="/viewsup_updatestatus/{{ i.id }}#about" class="btn btn-success">Update Status</a>
+     {% endif %}</td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="8"><div align="center"><a href="#">
+        <label>
+{#        <input type="submit" name="Submit2" value="Assign New" />#}
+        </label>
+      </a></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'supervsrindex.html' %}
+{% block body %}
+<html xmlns="http://www.w3.org/1999/html">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<body BACKGROUND="#FC2200;">
+<h1 align="center"><font color="black"><b>{{ type }} energy forecasting</b></font></h1>
+
+<canvas id="myChart" style="width:10%;max-height:600px"></canvas>
+
+{% if type == "wind" %}
+    <a href="/viewptr_wnd#about">Wind Properties</a>
+    {% else %}
+     <a href="/viewptr_slr#about">Solar Properties</a>
+{% endif %}
+
+<script>
+var xValues = [];
+var xValues2 = [];
+{% for i in c %}
+xValues.push("{{i}}");
+
+
+{% endfor %}
+var yValues = {{s}};
+var barColors = "lightblue";
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: yValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: xValues
+    }]
+  },
+
+ options: {
+      legend: {display: false},
+    scales: {
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Days'
+        }
+      }],
+      yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Energy Rate'
+        }
+      }]
+    }
+  }
+
+
+
+
+
+});
+</script>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<h1 align="center"><b>VIEW COMPLAINT</b></h1>
+  <table width="235" border="1" class="table table-striped">
+    <tr>
+      <td colspan="5"><b>Name</b>
+        <label>
+        <input type="text" name="textfield" />
+      </label>
+        <label>
+        <input type="submit" name="Submit" value="Search" class="btn btn-primary"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td><b>Complaint</b></td>
+      <td><b>Name</b></td>
+      <td><b>Reply</b></td>
+      <td><b>Date</b></td>
+      <td>&nbsp;</td>
+    </tr>
+        {% for i in val %}
+      <tr>
+      <td> {{ i.complaint }}</td>
+      <td> {{ i.LOGIN.username }}({{i.LOGIN.type}})</td>
+      <td>&nbsp;{{ i.reply }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+          {% if i.reply == "pending" %}
+      <td><a href="/adminsendreply/{{ i.id }}#about" class="btn btn-primary">Reply</a></td>
+      {% endif %}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

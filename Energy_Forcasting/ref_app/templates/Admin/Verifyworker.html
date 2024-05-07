@@ -1,0 +1,56 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="verifyworkersearch#about">
+<h1 align="center"><b>VERIFY WORKER</b></h1>
+  <table width="235" border="1" class="table table-striped">
+    <tr>
+      <td colspan="11"><B>Name</B>
+        <label>
+        <input type="text" name="textfield" />
+      </label>
+        <label>
+        <input type="submit" name="Submit" value="Search" class="btn btn-primary"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td><b>Name</b></td>
+      <td><b>Gender</b></td>
+      <td><b>Place</b></td>
+      <td><b>Post</b></td>
+      <td><b>Email</b></td>
+        <td><b>Dob</b></td>
+        <td><b>Pin</b></td>
+      <td><b>Phone</b></td>
+      <td><b>Photo</b></td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.fname }} {{ i.lname }}</td>
+      <td>&nbsp;{{ i.gender }}</td>
+      <td>&nbsp;{{ i.place }}</td>
+      <td>&nbsp;{{ i.post }}</td>
+      <td>&nbsp;{{ i.email }}</td>
+      <td>&nbsp;{{ i.dob }}</td>
+      <td>&nbsp;{{ i.pin }}</td>
+      <td>&nbsp;{{ i.phone }}</td>
+      <td> <img src="{{ i.photo.url }}" height="100" width="100"></td>
+        {% if i.LOGIN.type == 'pending' %}
+      <td><p><a href="acceptworker/{{ i.LOGIN.id }}" class="btn btn-success">Accept</a></p>
+        <p><a href="rejectworker/{{ i.LOGIN.id }}" class="btn btn-danger">Reject</a></p>
+      </td>
+              {% else %}
+<td>{{ i.LOGIN.type }}</td>
+    {% endif %}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

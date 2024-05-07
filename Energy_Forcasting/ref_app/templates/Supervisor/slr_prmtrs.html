@@ -1,0 +1,51 @@
+{% extends 'supervsrindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <h1 align="center"><b>Solar Properties</b></h1>
+  <table width="320" height="366" border="1" class="table table-striped">
+    <tr>
+        <td><b>Parameters Used</b></td>
+      <td><b>Description</b></td>
+    </tr>
+    <tr>
+      <td><strong data-sider-select-id="e03a3bc9-c136-4031-8630-667e061d683c">Time (year-month-day h:m:s)</strong> </td>
+      <td>Timestamp indicating when the data was recorded.</td>
+    </tr>
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="32034240-da77-4f41-9edd-875f55919bc7">Total Solar Irradiance (W/m&sup2;)</strong></td>#}
+{#      <td>The total power per unit area received from the sun, including both direct and diffuse solar radiation.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="c6bba7f3-4c46-4f1b-b9be-5e729b7aee69">Direct Normal Irradiance (W/m&sup2;)</strong> </td>#}
+{#      <td>Measures the amount of solar radiation received per unit area by a surface perpendicular to the rays coming from the sun.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="1a76a259-fcbd-4de5-916f-b9ec4e0976ab">Global Horizontal Irradiance (W/m&sup2;)</strong></td>#}
+{#      <td> The total amount of shortwave radiation received from above by a horizontal surface; this includes both direct sunlight and diffuse sky radiation.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="b7272e80-1b7b-4ff4-b783-f045b7f499e9">Air Temperature (&deg;C)</strong></td>#}
+{#      <td>The temperature of the air measured in degrees Celsius.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="bc4c7448-d18b-4eba-9f75-b994c5bd95b1">Atmosphere (hPa)</strong></td>#}
+{#      <td>Atmospheric pressure recorded in hectopascals, indicating the weight of the air over an area.</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td><strong data-sider-select-id="7e7a3e13-6c45-46b3-9ee3-e21148c55124">Relative Humidity (%)</strong></td>#}
+{#      <td> The amount of moisture in the air compared to the maximum amount of moisture the air can hold at that temperature, expressed as a percentage.</td>#}
+{#    </tr>#}
+    <tr>
+      <td><strong data-sider-select-id="aff11688-5afd-4d81-b212-5cd41f4f4b99">Power (MW)</strong></td>
+      <td>The output power generated from the solar energy, measured in megawatts.</td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'supervsrindex.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/viewassignedworkstoworker_search#about">
+<h1 align="center"><b><font color="black">View Worker Works</font></b></h1>
+  <table width="494" height="230" border="1" class="table table-striped">
+    <tr>
+      <td colspan="6"><b>Worker</b>
+        <label>
+        <input type="text" name="textfield" />
+        <input type="submit" name="Submit" value="Search" class="btn btn-primary" />
+      </label></td>
+    </tr>
+    <tr>
+      <td><b>Assigned Date</b></td>
+      <td><b>Worker</b></td>
+      <td><b>Resource</b></td>
+      <td><b>Works</b></td>
+      <td><b>Details</b></td>
+      <td><b>Status</b></td>
+    </tr>
+    <tr>
+        {% for i in val %}
+      <td> {{ i.date }}</td>
+      <td>&nbsp;{{ i.WORKER.fname }} {{ i.WORKER.lname }}</td>
+      <td><img src="{{ i.ASSIGNWORK.RESOURCE.photo.url }}" height="100px" width="100px"><br>{{ i.ASSIGNWORK.RESOURCE.product_type }} {{ i.ASSIGNWORK.RESOURCE.product_name }}</td>
+      <td>&nbsp;{{ i.work }}</td>
+      <td>&nbsp;{{ i.details }}</td>
+      <td>&nbsp;{{ i.status }} {% if i.status != "pending" %} on {{ i.updated_date }} {% endif %}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
